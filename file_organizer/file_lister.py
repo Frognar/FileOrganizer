@@ -1,9 +1,10 @@
-class FileLister:
-    def __init__(self, listdir_func):
-        self.listdir_func = listdir_func
+import os
 
-    def list_files(self, directory_path):
+
+class FileLister:
+    @staticmethod
+    def list_files(directory_path):
         try:
-            return self.listdir_func(directory_path)
+            return os.listdir(directory_path)
         except FileNotFoundError:
             return []

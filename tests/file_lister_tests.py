@@ -1,4 +1,3 @@
-import os
 import unittest
 from unittest.mock import patch
 
@@ -12,7 +11,7 @@ class TestFileLister(unittest.TestCase):
 
         with patch('os.listdir') as mocked_listdir:
             mocked_listdir.return_value = ['file1', 'file2', 'file3']
-            file_lister = FileLister(os.listdir)
+            file_lister = FileLister()
             files = file_lister.list_files(directory_path)
             self.assertEqual(len(files), expected_files_count)
 
@@ -22,7 +21,7 @@ class TestFileLister(unittest.TestCase):
 
         with patch('os.listdir') as mocked_listdir:
             mocked_listdir.return_value = expected_files
-            file_lister = FileLister(os.listdir)
+            file_lister = FileLister()
             files = file_lister.list_files(directory_path)
             self.assertEqual(files, expected_files)
 
@@ -32,7 +31,7 @@ class TestFileLister(unittest.TestCase):
 
         with patch('os.listdir') as mocked_listdir:
             mocked_listdir.return_value = expected_files
-            file_lister = FileLister(os.listdir)
+            file_lister = FileLister()
             files = file_lister.list_files(directory_path)
             self.assertEqual(files, expected_files)
 
@@ -42,6 +41,6 @@ class TestFileLister(unittest.TestCase):
 
         with patch('os.listdir') as mocked_listdir:
             mocked_listdir.side_effect = FileNotFoundError
-            file_lister = FileLister(os.listdir)
+            file_lister = FileLister()
             files = file_lister.list_files(directory_path)
             self.assertEqual(files, expected_files)
