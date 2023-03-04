@@ -27,9 +27,9 @@ Przykładowa konfiguracja:
 
 ```json
 {
-    "txt": "Tekstowe",
-    "pdf": "PDFy",
-    "jpg": "Obrazy",
+    ".txt": "Tekstowe",
+    ".pdf": "PDFy",
+    ".jpg": "Obrazy",
     "default": "Inne"
 }
 ```
