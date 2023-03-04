@@ -12,7 +12,7 @@ class TestFileLister(unittest.TestCase):
         expected_files_count = 3
 
         files = list_files(directory_path)
-        self.assertEqual(len(files), expected_files_count)
+        self.assertEqual(expected_files_count, len(files))
 
     @patch('os.listdir')
     def test_list_files_returns_correct_file_names(self, listdir):
@@ -21,7 +21,7 @@ class TestFileLister(unittest.TestCase):
         directory_path = "test_directory"
 
         files = list_files(directory_path)
-        self.assertEqual(files, expected_files)
+        self.assertEqual(expected_files, files)
 
     @patch('os.listdir')
     def test_list_files_returns_empty_list_if_directory_is_empty(self, listdir):
@@ -30,7 +30,7 @@ class TestFileLister(unittest.TestCase):
         directory_path = "empty_directory"
 
         files = list_files(directory_path)
-        self.assertEqual(files, expected_files)
+        self.assertEqual(expected_files, files)
 
     @patch('os.listdir')
     def test_list_files_returns_empty_list_if_directory_does_not_exist(self, listdir):
@@ -39,4 +39,4 @@ class TestFileLister(unittest.TestCase):
         expected_files = []
 
         files = list_files(directory_path)
-        self.assertEqual(files, expected_files)
+        self.assertEqual(expected_files, files)
