@@ -10,7 +10,7 @@ def generate_new_filename(filename: str) -> str:
     guid = uuid.uuid4()
     file, ext = os.path.splitext(os.path.basename(filename))
     file = re.sub(r'\s', '-', file)
-    return f'{date:%Y-%m-%d}_{file}_{guid}{ext}'
+    return f'{date:%Y-%m-%d}_{file}_{guid}{ext}'.lower()
 
 
 def now() -> datetime.date:
