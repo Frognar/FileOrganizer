@@ -35,7 +35,8 @@ Przykładowa konfiguracja:
 ```
 
 ## Wymagania
-Program wymaga środowiska Python 3.x. Nie wymaga żadnych dodatkowych bibliotek.
+Program wymaga środowiska Python 3.x.  
+Biblioteki użyte w projekcie podane w requirements.txt.
 
 ## Autor
 Ten program został napisany przez Frognar jako projekt związany z nauką programowania w Pythonie.
