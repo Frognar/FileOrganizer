@@ -12,7 +12,7 @@ Jeśli nie podano ścieżki docelowej, program przenosi pliki do odpowiednich ka
 **Uwaga**: Program nie sortuje katalogów. Sortowane są jedynie pliki według ich rozszerzeń. Jeśli w folderze znajdują się katalogi, program ich nie rusza.
 
 ```bash
-python file_organizer.py /ścieżka/do/folderu [ścieżka/docelowa]
+python organize_files.py /ścieżka/do/folderu [ścieżka/docelowa]
 ```
 
 2. Program przenosi pliki do odpowiednich katalogów, zdefiniowanych w pliku konfiguracyjnym `config.json`. Jeśli katalog dla danego rozszerzenia nie istnieje, program tworzy go automatycznie. Pliki bez rozszerzenia oraz pliki dla których nie zdefiniowano katalogu, trafiają do katalogu domyślnego o nazwie `Inne`.
