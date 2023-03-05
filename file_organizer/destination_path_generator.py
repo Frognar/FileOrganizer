@@ -10,3 +10,5 @@ class DestinationPathGenerator:
         _, ext = os.path.splitext(filename)
         if ext in self.config:
             return f'{self.destination_path}/{self.config[ext]}/{filename}'
+        else:
+            return f'{self.destination_path}/{self.config["default"]}/{filename}'

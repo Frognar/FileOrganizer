@@ -16,3 +16,16 @@ class TestDestinationPathGenerator(unittest.TestCase):
         new_path = generator.generate_path(file_name)
 
         self.assertEqual(expected_path, new_path)
+
+    def test_generate_path_returns_correct_path_using_default_catalog(self):
+        config = {
+            'default': 'Other'
+        }
+        destination_path = 'C:/dev'
+        generator = DestinationPathGenerator(destination_path, config)
+        file_name = 'test.jpg'
+        expected_path = 'C:/dev/Other/test.jpg'
+
+        new_path = generator.generate_path(file_name)
+
+        self.assertEqual(expected_path, new_path)
