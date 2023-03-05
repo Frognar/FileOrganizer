@@ -8,8 +8,12 @@ class DestinationPathGenerator:
 
     def generate_path(self, filename):
         _, ext = os.path.splitext(filename)
+        new_path = self.get_destination_catalog(ext)
+        return f'{new_path}/{filename}'
+
+    def get_destination_catalog(self, ext):
         if ext in self.config:
-            return f'{self.destination_path}/{self.config[ext]}/{filename}'
+            return f'{self.destination_path}/{self.config[ext]}'
         elif 'default' in self.config:
-            return f'{self.destination_path}/{self.config["default"]}/{filename}'
-        return f'{self.destination_path}/{filename}'
+            return f'{self.destination_path}/{self.config["default"]}'
+        return f'{self.destination_path}'
